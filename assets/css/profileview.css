@@ -1,0 +1,73 @@
+.floating-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 1000;
+    display: none;
+}
+
+.message-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.message-error {
+    background-color: #dc3545;
+    color: white;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Ajuste para hacerla responsiva */
+}
+
+.profile-card {
+    background-color: #fff;
+    padding: 1.5em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 80%; /* Se ajusta a un 80% del ancho del contenedor */
+    max-width: 480px; /* Máximo ancho */
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.profile-picture {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.popup-success {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    z-index: 1000;
+}

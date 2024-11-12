@@ -1,0 +1,317 @@
+/* RESET Y CONFIGURACIÓN BÁSICA */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url('../images/romantic_backgraund.jpg') no-repeat center center/cover; /* Imagen de fondo */
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Agregar un overlay sutil para oscurecer un poco la imagen de fondo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Ajusta la opacidad para oscurecer */
+    z-index: -1; /* Mantener detrás del contenido */
+}
+
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 24px;
+    margin: 0;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #ffe6eb;
+    transform: translateY(-3px);
+}
+
+/* TARJETA DE PERFIL Y CONTENEDOR */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.profile-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.profile-card h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.profile-card p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* IMAGEN DE PERFIL Y EMOJI OVERLAY */
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff7eb3;
+    margin-bottom: 15px;
+}
+
+.image-container {
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.emoji-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+/* BOTONES DE NAVEGACIÓN E INTERACCIÓN */
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button.delete-button {
+    background-color: #dc3545;
+}
+
+button.delete-button:hover {
+    background-color: #c82333;
+}
+
+button:not(.delete-button) {
+    background-color: #ff758c;
+}
+
+button:not(.delete-button):hover {
+    background-color: #ff5e78;
+}
+
+/* ESTILO PARA FORMULARIOS */
+#updateProfileForm {
+    margin-top: 30px;
+}
+
+#updateProfileForm label {
+    display: block;
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+#updateProfileForm input,
+#updateProfileForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#updateProfileForm button {
+    background-color: #28a745;
+    width: 100%;
+}
+
+#updateProfileForm button:hover {
+    background-color: #218838;
+}
+
+/* ESTILO PARA MENSAJES FLOTANTES */
+.floating-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 1000;
+    display: none;
+}
+
+.message-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.message-error {
+    background-color: #dc3545;
+    color: white;
+}
+
+
+.matches-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.match-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.match-card:hover {
+    transform: translateY(-5px);
+}
+
+.match-card p {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+}
+
+.message.sent {
+    background-color: #d1f7c4;
+    align-self: flex-end;
+}
+
+.message.received {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.chat-input button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
